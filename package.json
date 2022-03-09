@@ -12,11 +12,21 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "@idux/cdk": "^1.0.0-alpha.6",
+    "@idux/components": "^1.0.0-beta.0",
+    "@idux/pro": "^1.0.0-beta.0",
+    "@vueuse/core": "^7.7.0",
+    "axios": "^0.26.0",
+    "date-fns": "^2.28.0",
+    "lodash-es": "^4.17.0",
+    "pinia": "^2.0.0",
+    "vue": "^3.2.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.0",
     "@commitlint/config-angular": "^16.2.0",
+    "@types/lodash-es": "^4.17.0",
     "@types/node": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",

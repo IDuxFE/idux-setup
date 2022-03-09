@@ -13,6 +13,7 @@ module.exports = {
     defineEmits: 'readonly',
     defineExpose: 'readonly',
     withDefaults: 'readonly',
+    __DEV__: 'readonly',
   },
   parserOptions: {
     ecmaVersion: 2020,
@@ -65,5 +66,5 @@ module.exports = {
 
     'vue/attribute-hyphenation': 'off',
   },
-  ignorePatterns: ['.husky', '.vscode', 'dist', 'node_modules', 'public'],
+  ignorePatterns: ['.husky', '.vscode', 'dist', 'node_modules', 'public', 'typings'],
 }
