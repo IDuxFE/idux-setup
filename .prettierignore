@@ -1,0 +1,9 @@
+**/*.svg
+**/template/*
+coverage/
+dist/
+node_modules/
+public/
+publish/
+
+pnpm-lock.yaml
