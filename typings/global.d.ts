@@ -1,10 +1,5 @@
 export {}
 
-import { type DrawerProviderRef } from '@idux/components/drawer'
-import { type MessageProviderRef } from '@idux/components/message'
-import { type ModalProviderRef } from '@idux/components/modal'
-import { type NotificationProviderRef } from '@idux/components/notification'
-
 declare global {
   function setInterval(handler: TimerHandler, timeout?: number, ...arguments: any[]): number
   function setTimeout(handler: TimerHandler, timeout?: number, ...arguments: any[]): number
@@ -13,10 +8,14 @@ declare global {
 
   const __DEV__: boolean
 
-  const $idux: {
-    drawer: DrawerProviderRef
-    notification: NotificationProviderRef
-    modal: ModalProviderRef
-    message: MessageProviderRef
+  interface ImportMetaEnv {
+    readonly VITE_APP_TITLE: string
+    readonly VITE_BASE_URL: string
+    readonly VITE_PUBLIC_PATH: string
+    readonly VITE_MOCK_ENABLED: boolean
+  }
+
+  interface ImportMeta {
+    readonly env: ImportMetaEnv
   }
 }

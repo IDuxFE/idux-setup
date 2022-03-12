@@ -8,6 +8,7 @@ let Notification: NotificationProviderRef | undefined
 let Modal: ModalProviderRef | undefined
 let Message: MessageProviderRef | undefined
 
+// 方便在 ts 中直接调用
 export function registerProviders(option: {
   drawer: DrawerProviderRef
   notification: NotificationProviderRef

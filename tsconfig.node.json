@@ -4,5 +4,5 @@
     "module": "esnext",
     "moduleResolution": "node"
   },
-  "include": ["vite.config.ts"]
+  "include": ["mock/**/*.ts", "scripts/**/*.ts", "typings/*.d.ts", "vite.config.ts"]
 }

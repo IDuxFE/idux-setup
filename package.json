@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
-    "lint:eslint": "eslint \"./src/**/*.{vue,ts,tsx}\" --fix",
+    "lint:eslint": "eslint \"./{mock,scripts,src}/**/*.{vue,ts,tsx}\" --fix",
     "lint:stylelint": "stylelint \"./src/**/*.{vue,less,css}\" --fix",
     "lint-staged": "lint-staged"
   },
@@ -31,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "@vitejs/plugin-vue": "^2.2.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -41,17 +42,22 @@
     "husky": "^7.0.0",
     "less": "^4.1.0",
     "lint-staged": "^12.3.0",
+    "mockjs": "^1.1.0",
     "postcss": "^8.4.0",
     "postcss-html": "^1.3.0",
     "postcss-less": "^6.0.0",
     "prettier": "^2.5.0",
+    "rollup": "^2.70.0",
     "stylelint": "^14.5.0",
     "stylelint-config-html": "^1.0.0",
     "stylelint-config-prettier": "^9.0.0",
     "stylelint-config-standard": "^25.0.0",
     "typescript": "^4.6.0",
     "vite": "^2.8.0",
-    "vue-tsc": "^0.32.0"
+    "vite-plugin-mock": "^2.9.0",
+    "vite-plugin-windicss": "^1.8.0",
+    "vue-tsc": "^0.32.0",
+    "windicss": "^3.5.0"
   },
   "engines": {
     "node": ">= 16.0.0"

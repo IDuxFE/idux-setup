@@ -1,3 +1,6 @@
+import 'virtual:windi.css'
+import '@/design/index.less'
+
 import { createApp } from 'vue'
 import { idux } from './plugins'
 import { router } from './router'

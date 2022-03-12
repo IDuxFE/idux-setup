@@ -1,27 +1,34 @@
 import { resolve } from 'path'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig, loadEnv } from 'vite'
+
+import {
+  convertViteEnv,
+  createVitePlugins,
+  generateGlobalVars,
+  generateModifyVars,
+} from './scripts/vite'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }) => {
   const isBuild = command === 'build'
+  const root = process.cwd()
+  const envDir = './envs'
+  const envConfig = convertViteEnv(loadEnv(mode, envDir))
+  const { VITE_PUBLIC_PATH } = envConfig
 
   return {
-    envDir: './envs',
-    plugins: [vue()],
+    base: VITE_PUBLIC_PATH,
+    envDir: envDir,
+    plugins: createVitePlugins(envConfig),
     resolve: {
-      alias: [
-        {
-          find: '@',
-          replacement: resolve(process.cwd(), 'src'),
-        },
-      ],
-      dedupe: ['vue'],
+      alias: [{ find: '@', replacement: resolve(root, 'src') }],
     },
     css: {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
+          globalVars: generateGlobalVars(),
+          modifyVars: generateModifyVars(),
         },
       },
     },
