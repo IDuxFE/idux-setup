@@ -18,4 +18,14 @@ declare global {
   interface ImportMeta {
     readonly env: ImportMetaEnv
   }
+
+  type Indexable<T = any> = {
+    [key: string]: T
+  }
+  type Lazy<T> = () => Promise<T>
+  type Nullable<T> = T | null
+  type Recordable<T = any> = Record<string, T>
+  type Writable<T> = {
+    -readonly [P in keyof T]: T[P]
+  }
 }
