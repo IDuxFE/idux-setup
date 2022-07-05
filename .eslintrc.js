@@ -65,6 +65,7 @@ module.exports = {
     ],
 
     'vue/attribute-hyphenation': 'off',
+    'vue/multi-word-component-names': 'off',
   },
   ignorePatterns: ['.husky', '.vscode', 'dist', 'node_modules', 'public', 'typings'],
 }
