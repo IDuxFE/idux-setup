@@ -1,11 +1,9 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouterGuards } from './guards'
+import type { App } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import routes from './routes'
 
-const routes: RouteRecordRaw[] = [
-  // { path: '/', component: () => import('../views/Home.vue') },
-  // { path: '/:pathMatch(.*)*', redirect: '/' },
-]
-
-export const router = createRouter({
+const router = createRouter({
   routes,
   history: createWebHistory(),
   scrollBehavior: (to, _, savedPosition) => {
@@ -18,3 +16,11 @@ export const router = createRouter({
     }
   },
 })
+
+const install = (app: App): void => {
+  app.use(router)
+
+  createRouterGuards(router)
+}
+
+export default { install }
