@@ -1,5 +1,5 @@
 <template>
-  <IxProLayout v-model:activeKey="route.path" :menus="menus" type="mixin" :compress="true">
+  <IxProLayout :activeKey="activeKey" :menus="menus" type="mixin" :compress="true">
     <template #itemLabel="item">
       <router-link :to="item.key">{{ item.label }}</router-link>
     </template>
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 import type { MenuData } from '@idux/components/menu'
 import Logo from '@/layout/components/Logo.vue'
@@ -33,7 +33,7 @@ import HeaderExtra from './components/HeaderExtra.vue'
 import { normalizePath } from '@/utils'
 
 const menus = ref<MenuData[]>([])
-
+const activeKey = computed(() => route.path)
 const route = useRoute()
 
 onMounted(() => {
