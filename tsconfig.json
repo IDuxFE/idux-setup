@@ -10,7 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-
+    "types": ["pinia-plugin-persist"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
